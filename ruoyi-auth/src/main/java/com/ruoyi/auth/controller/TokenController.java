@@ -2,10 +2,7 @@ package com.ruoyi.auth.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import com.ruoyi.auth.form.LoginBody;
 import com.ruoyi.auth.form.RegisterBody;
 import com.ruoyi.auth.service.SysLoginService;
@@ -30,6 +27,12 @@ public class TokenController
 
     @Autowired
     private SysLoginService sysLoginService;
+
+    @GetMapping("test")
+    public R<?> test()
+    {
+        return R.ok();
+    }
 
     @PostMapping("login")
     public R<?> login(@RequestBody LoginBody form)
